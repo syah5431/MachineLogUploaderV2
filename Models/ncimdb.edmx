@@ -1,0 +1,293 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SMLProcessControlModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="LotProgress">
+          <Key>
+            <PropertyRef Name="LotNo" />
+            <PropertyRef Name="LotNoSuffix" />
+            <PropertyRef Name="ProcessSeqNo" />
+          </Key>
+          <Property Name="LotNo" Type="char" MaxLength="15" Nullable="false" />
+          <Property Name="LotNoSuffix" Type="char" MaxLength="3" Nullable="false" />
+          <Property Name="Type" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="ProductCode" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="ProductFamily" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="ProductCateg" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="OrderNo" Type="char" MaxLength="15" Nullable="false" />
+          <Property Name="ProcessSeqNo" Type="int" Nullable="false" />
+          <Property Name="ProcessCode" Type="char" MaxLength="6" Nullable="false" />
+          <Property Name="ProcessName" Type="nvarchar" MaxLength="50" />
+          <Property Name="StartPlanTime" Type="datetime" />
+          <Property Name="EndPlanTime" Type="datetime" />
+          <Property Name="MachineNo" Type="char" MaxLength="10" />
+          <Property Name="MachineName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LineID" Type="char" MaxLength="4" />
+          <Property Name="LineName" Type="nvarchar" MaxLength="50" />
+          <Property Name="StartTime" Type="datetime" />
+          <Property Name="StartOperatorID" Type="char" MaxLength="10" />
+          <Property Name="StartOperatorName" Type="nvarchar" MaxLength="50" />
+          <Property Name="EndTime" Type="datetime" />
+          <Property Name="EndOperatorID" Type="char" MaxLength="10" />
+          <Property Name="EndOperatorName" Type="nvarchar" MaxLength="50" />
+          <Property Name="InputQty" Type="int" />
+          <Property Name="SubInputQty" Type="int" />
+          <Property Name="InputLotCount" Type="numeric" Precision="4" Scale="3" />
+          <Property Name="SurplusInQty" Type="int" />
+          <Property Name="SubSurplusInQty" Type="int" />
+          <Property Name="TotalBlendInQty" Type="int" />
+          <Property Name="SubTotalBlendInQty" Type="int" />
+          <Property Name="InputUnit" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="InputUnitName" Type="nvarchar" MaxLength="10" />
+          <Property Name="OutputQty" Type="int" />
+          <Property Name="SubOutputQty" Type="int" />
+          <Property Name="OutputLotCount" Type="numeric" Precision="4" Scale="3" />
+          <Property Name="TotalDefectQty" Type="int" />
+          <Property Name="SubTotalDefectQty" Type="int" />
+          <Property Name="SurplusOutQty" Type="int" />
+          <Property Name="SubSurplusOutQty" Type="int" />
+          <Property Name="TotalBlendOutQty" Type="int" />
+          <Property Name="SubTotalBlendOutQty" Type="int" />
+          <Property Name="SampleQty" Type="int" />
+          <Property Name="SubSampleQty" Type="int" />
+          <Property Name="UnclearQty" Type="int" />
+          <Property Name="SubUnclearQty" Type="int" />
+          <Property Name="OutputUnit" Type="char" MaxLength="2" Nullable="false" />
+          <Property Name="OutputUnitName" Type="nvarchar" MaxLength="10" />
+          <Property Name="MachineStartTime" Type="datetime" />
+          <Property Name="MachineEndTime" Type="datetime" />
+          <Property Name="MachineProductionTime" Type="char" MaxLength="10" />
+          <Property Name="MachineStopTime" Type="char" MaxLength="10" />
+          <Property Name="MachineAlarmTime" Type="char" MaxLength="10" />
+          <Property Name="ProductEnd" Type="bit" Nullable="false" />
+          <Property Name="WIPControlEnd" Type="bit" Nullable="false" />
+          <Property Name="TotalDefectEnd" Type="bit" Nullable="false" />
+          <Property Name="DailyAnalysisCheck" Type="bit" Nullable="false" />
+          <Property Name="OptionalProcess" Type="bit" Nullable="false" />
+          <Property Name="QtyCheck" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="DefectCheck" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="DeletePermission" Type="bit" Nullable="false" />
+          <Property Name="HavingSmallProcess" Type="bit" Nullable="false" />
+          <Property Name="StartCarrierSet" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="StartCarrierCheck" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="EndCarrierSet" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="EndCarrierCheck" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="UpdateCarrierEnd" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="UpdateMaterialEnd" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="UpdateToolEnd" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="SplitLot" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="SurplusSucceed" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="RegistType" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="NCNNo" Type="char" MaxLength="15" />
+          <Property Name="AddDate" Type="datetime" Nullable="false" />
+          <Property Name="UpdDate" Type="datetime" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="ComputerName" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SMLProcessControlModelStoreContainer">
+          <EntitySet Name="LotProgress" EntityType="Self.LotProgress" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SMLProcessControlModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="LotProgress">
+          <Key>
+            <PropertyRef Name="LotNo" />
+            <PropertyRef Name="LotNoSuffix" />
+            <PropertyRef Name="ProcessSeqNo" />
+          </Key>
+          <Property Name="LotNo" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="LotNoSuffix" Type="String" MaxLength="3" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="Type" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="ProductCode" Type="String" MaxLength="20" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ProductFamily" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ProductCateg" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="OrderNo" Type="String" MaxLength="15" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ProcessSeqNo" Type="Int32" Nullable="false" />
+          <Property Name="ProcessCode" Type="String" MaxLength="6" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="ProcessName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StartPlanTime" Type="DateTime" Precision="3" />
+          <Property Name="EndPlanTime" Type="DateTime" Precision="3" />
+          <Property Name="MachineNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="MachineName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LineID" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="LineName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="StartTime" Type="DateTime" Precision="3" />
+          <Property Name="StartOperatorID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="StartOperatorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="EndTime" Type="DateTime" Precision="3" />
+          <Property Name="EndOperatorID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="EndOperatorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="InputQty" Type="Int32" />
+          <Property Name="SubInputQty" Type="Int32" />
+          <Property Name="InputLotCount" Type="Decimal" Precision="4" Scale="3" />
+          <Property Name="SurplusInQty" Type="Int32" />
+          <Property Name="SubSurplusInQty" Type="Int32" />
+          <Property Name="TotalBlendInQty" Type="Int32" />
+          <Property Name="SubTotalBlendInQty" Type="Int32" />
+          <Property Name="InputUnit" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="InputUnitName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="OutputQty" Type="Int32" />
+          <Property Name="SubOutputQty" Type="Int32" />
+          <Property Name="OutputLotCount" Type="Decimal" Precision="4" Scale="3" />
+          <Property Name="TotalDefectQty" Type="Int32" />
+          <Property Name="SubTotalDefectQty" Type="Int32" />
+          <Property Name="SurplusOutQty" Type="Int32" />
+          <Property Name="SubSurplusOutQty" Type="Int32" />
+          <Property Name="TotalBlendOutQty" Type="Int32" />
+          <Property Name="SubTotalBlendOutQty" Type="Int32" />
+          <Property Name="SampleQty" Type="Int32" />
+          <Property Name="SubSampleQty" Type="Int32" />
+          <Property Name="UnclearQty" Type="Int32" />
+          <Property Name="SubUnclearQty" Type="Int32" />
+          <Property Name="OutputUnit" Type="String" MaxLength="2" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="OutputUnitName" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MachineStartTime" Type="DateTime" Precision="3" />
+          <Property Name="MachineEndTime" Type="DateTime" Precision="3" />
+          <Property Name="MachineProductionTime" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="MachineStopTime" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="MachineAlarmTime" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="ProductEnd" Type="Boolean" Nullable="false" />
+          <Property Name="WIPControlEnd" Type="Boolean" Nullable="false" />
+          <Property Name="TotalDefectEnd" Type="Boolean" Nullable="false" />
+          <Property Name="DailyAnalysisCheck" Type="Boolean" Nullable="false" />
+          <Property Name="OptionalProcess" Type="Boolean" Nullable="false" />
+          <Property Name="QtyCheck" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DefectCheck" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="DeletePermission" Type="Boolean" Nullable="false" />
+          <Property Name="HavingSmallProcess" Type="Boolean" Nullable="false" />
+          <Property Name="StartCarrierSet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="StartCarrierCheck" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="EndCarrierSet" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="EndCarrierCheck" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="UpdateCarrierEnd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="UpdateMaterialEnd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="UpdateToolEnd" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="SplitLot" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="SurplusSucceed" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="RegistType" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="NCNNo" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Name="AddDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ComputerName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="SMLProcessControlEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="LotProgresses" EntityType="Self.LotProgress" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SMLProcessControlModelStoreContainer" CdmEntityContainer="SMLProcessControlEntities">
+          <EntitySetMapping Name="LotProgresses">
+            <EntityTypeMapping TypeName="SMLProcessControlModel.LotProgress">
+              <MappingFragment StoreEntitySet="LotProgress">
+                <ScalarProperty Name="LotNo" ColumnName="LotNo" />
+                <ScalarProperty Name="LotNoSuffix" ColumnName="LotNoSuffix" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="ProductFamily" ColumnName="ProductFamily" />
+                <ScalarProperty Name="ProductCateg" ColumnName="ProductCateg" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="ProcessSeqNo" ColumnName="ProcessSeqNo" />
+                <ScalarProperty Name="ProcessCode" ColumnName="ProcessCode" />
+                <ScalarProperty Name="ProcessName" ColumnName="ProcessName" />
+                <ScalarProperty Name="StartPlanTime" ColumnName="StartPlanTime" />
+                <ScalarProperty Name="EndPlanTime" ColumnName="EndPlanTime" />
+                <ScalarProperty Name="MachineNo" ColumnName="MachineNo" />
+                <ScalarProperty Name="MachineName" ColumnName="MachineName" />
+                <ScalarProperty Name="LineID" ColumnName="LineID" />
+                <ScalarProperty Name="LineName" ColumnName="LineName" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="StartOperatorID" ColumnName="StartOperatorID" />
+                <ScalarProperty Name="StartOperatorName" ColumnName="StartOperatorName" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="EndOperatorID" ColumnName="EndOperatorID" />
+                <ScalarProperty Name="EndOperatorName" ColumnName="EndOperatorName" />
+                <ScalarProperty Name="InputQty" ColumnName="InputQty" />
+                <ScalarProperty Name="SubInputQty" ColumnName="SubInputQty" />
+                <ScalarProperty Name="InputLotCount" ColumnName="InputLotCount" />
+                <ScalarProperty Name="SurplusInQty" ColumnName="SurplusInQty" />
+                <ScalarProperty Name="SubSurplusInQty" ColumnName="SubSurplusInQty" />
+                <ScalarProperty Name="TotalBlendInQty" ColumnName="TotalBlendInQty" />
+                <ScalarProperty Name="SubTotalBlendInQty" ColumnName="SubTotalBlendInQty" />
+                <ScalarProperty Name="InputUnit" ColumnName="InputUnit" />
+                <ScalarProperty Name="InputUnitName" ColumnName="InputUnitName" />
+                <ScalarProperty Name="OutputQty" ColumnName="OutputQty" />
+                <ScalarProperty Name="SubOutputQty" ColumnName="SubOutputQty" />
+                <ScalarProperty Name="OutputLotCount" ColumnName="OutputLotCount" />
+                <ScalarProperty Name="TotalDefectQty" ColumnName="TotalDefectQty" />
+                <ScalarProperty Name="SubTotalDefectQty" ColumnName="SubTotalDefectQty" />
+                <ScalarProperty Name="SurplusOutQty" ColumnName="SurplusOutQty" />
+                <ScalarProperty Name="SubSurplusOutQty" ColumnName="SubSurplusOutQty" />
+                <ScalarProperty Name="TotalBlendOutQty" ColumnName="TotalBlendOutQty" />
+                <ScalarProperty Name="SubTotalBlendOutQty" ColumnName="SubTotalBlendOutQty" />
+                <ScalarProperty Name="SampleQty" ColumnName="SampleQty" />
+                <ScalarProperty Name="SubSampleQty" ColumnName="SubSampleQty" />
+                <ScalarProperty Name="UnclearQty" ColumnName="UnclearQty" />
+                <ScalarProperty Name="SubUnclearQty" ColumnName="SubUnclearQty" />
+                <ScalarProperty Name="OutputUnit" ColumnName="OutputUnit" />
+                <ScalarProperty Name="OutputUnitName" ColumnName="OutputUnitName" />
+                <ScalarProperty Name="MachineStartTime" ColumnName="MachineStartTime" />
+                <ScalarProperty Name="MachineEndTime" ColumnName="MachineEndTime" />
+                <ScalarProperty Name="MachineProductionTime" ColumnName="MachineProductionTime" />
+                <ScalarProperty Name="MachineStopTime" ColumnName="MachineStopTime" />
+                <ScalarProperty Name="MachineAlarmTime" ColumnName="MachineAlarmTime" />
+                <ScalarProperty Name="ProductEnd" ColumnName="ProductEnd" />
+                <ScalarProperty Name="WIPControlEnd" ColumnName="WIPControlEnd" />
+                <ScalarProperty Name="TotalDefectEnd" ColumnName="TotalDefectEnd" />
+                <ScalarProperty Name="DailyAnalysisCheck" ColumnName="DailyAnalysisCheck" />
+                <ScalarProperty Name="OptionalProcess" ColumnName="OptionalProcess" />
+                <ScalarProperty Name="QtyCheck" ColumnName="QtyCheck" />
+                <ScalarProperty Name="DefectCheck" ColumnName="DefectCheck" />
+                <ScalarProperty Name="DeletePermission" ColumnName="DeletePermission" />
+                <ScalarProperty Name="HavingSmallProcess" ColumnName="HavingSmallProcess" />
+                <ScalarProperty Name="StartCarrierSet" ColumnName="StartCarrierSet" />
+                <ScalarProperty Name="StartCarrierCheck" ColumnName="StartCarrierCheck" />
+                <ScalarProperty Name="EndCarrierSet" ColumnName="EndCarrierSet" />
+                <ScalarProperty Name="EndCarrierCheck" ColumnName="EndCarrierCheck" />
+                <ScalarProperty Name="UpdateCarrierEnd" ColumnName="UpdateCarrierEnd" />
+                <ScalarProperty Name="UpdateMaterialEnd" ColumnName="UpdateMaterialEnd" />
+                <ScalarProperty Name="UpdateToolEnd" ColumnName="UpdateToolEnd" />
+                <ScalarProperty Name="SplitLot" ColumnName="SplitLot" />
+                <ScalarProperty Name="SurplusSucceed" ColumnName="SurplusSucceed" />
+                <ScalarProperty Name="RegistType" ColumnName="RegistType" />
+                <ScalarProperty Name="NCNNo" ColumnName="NCNNo" />
+                <ScalarProperty Name="AddDate" ColumnName="AddDate" />
+                <ScalarProperty Name="UpdDate" ColumnName="UpdDate" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="ComputerName" ColumnName="ComputerName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
